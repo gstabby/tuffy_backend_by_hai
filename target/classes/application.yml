@@ -1,0 +1,62 @@
+# DataSource Config
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/vueblog?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+  servlet:
+    multipart:
+#      maxFileSize 是单个文件大小，maxRequestSize是设置总上传的数据大小
+      max-file-size: 30MB
+      max-request-size: 30MB
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**Mapper.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+
+server:
+  port: 80
+#shiro-redis:
+#  enabled: true
+#  redis-manager:
+#    host: 192.168.220.128:6379
+markerhub:
+  jwt:
+    secret: f4e2e52034348f86b67cde581c0f9eb5
+    expire: 36000
+    header: Authorizatio
+
+logging:
+  level:
+    com:
+      markerhub:
+        mapper : debug
+
+#邮件参数配置
+emailconfig:
+  email:
+      host: "smtp.sohu.com"
+      port: 25
+      from: "tuffytuffy@sohu.com"
+      user: "tuffytuffy"
+      pass: "FLWT5MNK0VU"
+      auth: true
+#邮件cd 60 秒
+send-email-wait : 60
+#评论cd 60 秒
+comment-wait : 60
+#留言分页 每页大小
+messages-page-size: 10
+
+
+
+
+
+
+
+

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8b6b26f8-360a-4673-a8e4-dae32f3942dc" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+        <option value="Tag Library Descriptor" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="E:/maven/apache-maven-3.6.0" />
+        <option name="userSettingsFile" value="E:\maven\apache-maven-3.6.0\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1gT5qoehgPoRwzQPNyq09BrI71E" />
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.markerhub.mapper" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\学习资料\vueblog-master\vueblog-java\src\main\resources\image" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.VueblogApplication">
+    <configuration name="CodeGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.markerhub.CodeGenerator" />
+      <module name="vueblog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.markerhub.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BlogMapperTest.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="vueblog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.markerhub.mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.markerhub.mapper" />
+      <option name="MAIN_CLASS_NAME" value="com.markerhub.mapper.BlogMapperTest" />
+      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BlogMapperTest.getById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="vueblog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.markerhub.mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.markerhub.mapper" />
+      <option name="MAIN_CLASS_NAME" value="com.markerhub.mapper.BlogMapperTest" />
+      <option name="METHOD_NAME" value="getById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VueblogApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="vueblog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.markerhub.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.markerhub.VueblogApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.VueblogApplication" />
+        <item itemvalue="Application.CodeGenerator" />
+        <item itemvalue="JUnit.BlogMapperTest.getById" />
+        <item itemvalue="JUnit.BlogMapperTest.contextLoads" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8b6b26f8-360a-4673-a8e4-dae32f3942dc" name="Default Changelist" comment="" />
+      <created>1598125934931</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1598125934931</updated>
+      <workItem from="1598125938150" duration="4916000" />
+      <workItem from="1598201196344" duration="15599000" />
+      <workItem from="1598217755140" duration="515000" />
+      <workItem from="1598250503952" duration="3704000" />
+      <workItem from="1598287464753" duration="3453000" />
+      <workItem from="1598643504651" duration="6522000" />
+      <workItem from="1598650212714" duration="8409000" />
+      <workItem from="1598689014488" duration="15869000" />
+      <workItem from="1598705454354" duration="295000" />
+      <workItem from="1598718969335" duration="17005000" />
+      <workItem from="1598796100696" duration="15161000" />
+      <workItem from="1598814758230" duration="5957000" />
+      <workItem from="1598861257232" duration="48372000" />
+      <workItem from="1598973734507" duration="12601000" />
+      <workItem from="1599059441302" duration="5452000" />
+      <workItem from="1599115648137" duration="6000" />
+      <workItem from="1599115927198" duration="6000" />
+      <workItem from="1599116094856" duration="5000" />
+      <workItem from="1599116536516" duration="8013000" />
+      <workItem from="1599124883912" duration="2124000" />
+      <workItem from="1599158484299" duration="624000" />
+      <workItem from="1599224780890" duration="8919000" />
+      <workItem from="1599290293633" duration="921000" />
+      <workItem from="1599291230508" duration="20808000" />
+      <workItem from="1599388331706" duration="25597000" />
+      <workItem from="1599482071851" duration="11739000" />
+      <workItem from="1599552236206" duration="8000" />
+      <workItem from="1599554486204" duration="4000" />
+      <workItem from="1599556827328" duration="3000" />
+      <workItem from="1599556872637" duration="35000" />
+      <workItem from="1599557374469" duration="7535000" />
+      <workItem from="1599637792724" duration="1051000" />
+      <workItem from="1599649416789" duration="4310000" />
+      <workItem from="1599749950033" duration="7943000" />
+      <workItem from="1599759851625" duration="6000" />
+      <workItem from="1599841901686" duration="3369000" />
+      <workItem from="1599934586986" duration="998000" />
+      <workItem from="1600010129524" duration="11127000" />
+      <workItem from="1600185711386" duration="15409000" />
+      <workItem from="1600243960338" duration="3000" />
+      <workItem from="1600262648986" duration="4675000" />
+      <workItem from="1600335959914" duration="4857000" />
+      <workItem from="1600688079245" duration="155000" />
+      <workItem from="1600882780344" duration="1930000" />
+      <workItem from="1600967700810" duration="618000" />
+      <workItem from="1601047855944" duration="1200000" />
+      <workItem from="1601051690864" duration="6377000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="e" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

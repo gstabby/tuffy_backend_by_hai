@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.markerhub.mapper.BlogMapper">
+
+    <resultMap type="com.markerhub.entity.Blog" id="blogBean">
+        <id column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="description" property="description"/>
+        <result column="content" property="content"/>
+        <result column="created" property="created"/>
+        <result column="status" property="status"/>
+        <result column="path" property="path"/>
+        <result column="readnum" property="readNum"/>
+
+        <!--         property: 指的是集合属性的值, ofType：指的是集合中元素的类型-->
+        <association property="user" javaType="com.markerhub.entity.User" column="user_id" select="getByUserId" />
+
+
+        <association property="category" javaType="com.markerhub.entity.Category" column="category" select="getByCateId" />
+
+        <!--         一对多的关系-->
+
+        <collection property="tags" ofType="com.markerhub.entity.Tag"
+                    javaType="java.util.List" select="getTags" column="id"/>
+
+    </resultMap>
+
+    <resultMap id="tags" type="com.markerhub.entity.Tag">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="description" property="description"/>
+    </resultMap>
+
+    <select id="getTags" parameterType="long" resultMap="tags">
+        select
+            m.description,
+            m.id,
+            m.name
+        from
+            m_blog_tag mbt
+        left join m_tag m on
+            mbt.t_id = m.id
+        where
+            mbt.b_id = #{id}
+    </select>
+
+
+    <resultMap id="user" type="com.markerhub.entity.User">
+        <id column="id" property="id"/>
+        <result column="username" property="username"/>
+    </resultMap>
+
+    <select id="getByUserId" parameterType="long" resultMap="user">
+        select mu.id ,mu.username from m_user mu where id = #{user_id}
+    </select>
+
+    <resultMap id="category" type="com.markerhub.entity.Category">
+        <id column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="description" property="description"/>
+    </resultMap>
+
+    <select id="getByCateId" parameterType="long" resultMap="category">
+        select mc.id ,mc.title,mc.description from m_category mc where id = #{category}
+    </select>
+
+    <select id="getAllByPage" resultMap="blogBean"  >
+        select mb.category ,mb.created ,mb.description ,mb.id ,mb.`path` ,mb.status ,mb.title ,mb.user_id from m_blog mb
+        order by created desc
+    </select>
+
+    <select id="getByCategory" resultMap="blogBean" parameterType="Long" >
+        select mb.category ,mb.created ,mb.description ,mb.id ,mb.`path` ,mb.status ,mb.title ,mb.user_id from m_blog mb
+        <where>
+                mb.category = #{category}
+        </where>
+        order by created desc
+    </select>
+
+    <select id="getByTag" resultMap="blogBean" parameterType="Long" >
+         select
+            mb_t.content content,
+            mb_t.created created,
+            mb_t.description description,
+            mb_t.id id,
+            mb_t.title title ,
+            mb_t.`path` `path` ,
+            mb_t.status status ,
+            mb_t.user_id user_id,
+            mb_t.category category
+        from
+            (
+            select
+                mb.*
+            from
+                m_blog mb
+            where
+                mb.id in (
+                select
+                    mbt.b_id
+                from
+                    m_blog_tag mbt
+                where
+                    mbt.t_id = #{tagId} )) mb_t
+         order by created desc
+    </select>
+
+    <select id="getById" resultMap="blogBean" parameterType="Long">
+        select
+            mb.category ,
+            mb.created ,
+            mb.description ,
+            mb.id ,
+            mb.`path` ,
+            mb.status ,
+            mb.title ,
+            mb.content ,
+            mb.user_id,
+            mb.readnum
+        from
+            m_blog mb
+        where
+            id = #{id}
+        order by created desc
+    </select>
+
+    <insert id="save" useGeneratedKeys="true" keyProperty="id" parameterType = "map"  >
+        insert into
+            m_blog(user_id,title,description,content,created,status,category,`path` )
+        values(#{userId},#{title},#{description},#{content},#{created},#{status},#{category},#{path})
+    </insert>
+
+    <insert id="saveBlogTag">
+        insert into m_blog_tag(t_id,b_id) values (#{tagId},#{blogId})
+    </insert>
+
+
+    <resultMap type="map" id="simpleInfo">
+        <id column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="description" property="description"/>
+        <result column="content" property="content"/>
+        <result column="created" property="created"/>
+        <result column="status" property="status"/>
+        <result column="path" property="path"/>
+        <result column="readnum" property="readNum"/>
+    </resultMap>
+
+    <select id="getAll" resultMap="blogBean" >
+        select mb.category ,mb.created ,mb.description ,mb.id ,mb.`path` ,mb.status ,mb.title ,mb.user_id,mb.readNum from m_blog mb
+        order by mb.created desc
+    </select>
+
+    <select id="getBlogCreateDateList"  resultType="String" >
+          select distinct DATE_FORMAT(mb.created, '%Y') created from m_blog mb order by created  desc
+    </select>
+
+    <select id="getBlogByYear" resultType="map">
+         select mb.id ,mb.title,date_format(mb.created,'%Y-%m-%d') created from m_blog mb where   year (mb.created ) = #{year}
+    </select>
+
+    <update id="addReadNum" parameterType="Long">
+         update m_blog set readnum = readnum + 1 where id = #{id}
+    </update>
+
+    <delete id="deleteById" parameterType="Long">
+        delete
+            mb,
+            mbt
+        from
+            m_blog mb
+        left join m_blog_tag mbt on
+            mb.id = mbt .b_id
+        where
+            mb.id = #{id}
+    </delete>
+
+    <select id="getByLike" resultMap="blogBean" parameterType="String">
+        select
+            mb.category ,
+            mb.created ,
+            mb.description ,
+            mb.id ,
+            mb.`path` ,
+            mb.status ,
+            mb.title ,
+            mb.content ,
+            mb.user_id,
+            mb.readnum
+        from
+            m_blog mb
+        where
+            mb.title like #{key} or mb.description like #{key}
+        order by created desc
+    </select>
+
+</mapper>

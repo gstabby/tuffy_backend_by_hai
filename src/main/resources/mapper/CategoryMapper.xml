@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.markerhub.mapper.CategoryMapper">
+
+    <select id="getAll" resultType="com.markerhub.entity.Category">
+       select
+            c.id id,
+            c.description description ,
+            c.title title ,
+            ifnull(temp.blognum,0) blogNum
+        from
+            m_category c
+        left join (
+            select
+                mb.category,
+                count(mb.category) blognum
+            from
+                m_blog mb
+            group by
+                mb.category ) temp on
+            c.id = temp.category
+    </select>
+
+    <delete id="deleteNoBlog" parameterType="Long" >
+         delete from m_category where id = #{id} and id not in(select distinct category from m_blog)
+    </delete>
+
+</mapper>
